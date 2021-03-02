@@ -1,10 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import SEO from "../seo"
 import ProductForm from "../ProductForm"
 import { Img, Container, TwoColumnGrid, GridLeft, GridRight } from "./styles"
 import { ProductTitle, ProductDescription } from "./styles"
+import SEO from "../SEO"
 
 const ProductPage = ({ data }) => {
   const product = data.shopifyProduct

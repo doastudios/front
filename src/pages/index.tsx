@@ -1,6 +1,5 @@
 import React, { ReactElement, useState } from "react"
 import { motion } from "framer-motion"
-import StarfieldAnimation from "react-starfield-animation"
 import useScrollPosition from "../cross/hooks/useScrollPosition"
 import styled from "@emotion/styled"
 
@@ -22,16 +21,6 @@ function Index(_props: Props): ReactElement {
     <div className="container overflow-hidden full-bleed ">
       <img src={HowWouldYouRateYourExperience} />
       <img src={Starfield} className="h-screen" />
-      <StarfieldContainer>
-        <StarfieldAnimation
-          style={{
-            position: "absolute",
-            width: "100vw",
-            height: "100vh",
-            marginTop: "-50%",
-          }}
-        ></StarfieldAnimation>
-      </StarfieldContainer>
     </div>
   )
 }
