@@ -19,8 +19,10 @@ function Index(_props: Props): ReactElement {
 
   return (
     <div className="container overflow-hidden full-bleed ">
-      <img src={HowWouldYouRateYourExperience} />
-      <img src={Starfield} className="h-screen" />
+      <img className="w-full v-screen" src={HowWouldYouRateYourExperience} />
+      <motion.div layout animate={{ y: 0.5 * -scrollPosition }}>
+        <img src={Starfield} className="w-screen h-screen" />
+      </motion.div>
     </div>
   )
 }
