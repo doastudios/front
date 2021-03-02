@@ -8,6 +8,15 @@ module.exports = {
       colors: {
         teal: colors.teal,
       },
+      container: (theme) => ({
+        center: true,
+        padding: {
+          default: theme("spacing.4"),
+          sm: theme("spacing.5"),
+          lg: theme("spacing.6"),
+          xl: theme("spacing.8"),
+        },
+      }),
     },
   },
   variants: {
