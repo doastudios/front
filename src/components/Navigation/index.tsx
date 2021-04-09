@@ -90,6 +90,9 @@ const Navigation = ({ scrolled }: { siteTitle: string; scrolled: boolean }) => {
               <a href="/magazine">magazine</a>
             </MenuItem>
             <MenuItem>
+              <a href="/articles">articles</a>
+            </MenuItem>
+            <MenuItem>
               <a href="/blog">blog</a>
             </MenuItem>
             <MenuItem>

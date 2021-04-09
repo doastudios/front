@@ -13,3 +13,8 @@
 	right: 50%;
 	width: 100vw;
 }
+
+
+body {
+	cursor: url('/PointerFinger.svg') 24 24, auto;
+}

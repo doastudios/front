@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       colors: {
         teal: colors.teal,
+        blau: "#0000fe",
       },
       container: (theme) => ({
         center: true,

@@ -1,7 +1,9 @@
 import React, { ReactElement, useState } from "react"
 import { motion } from "framer-motion"
 import useScrollPosition from "../cross/hooks/useScrollPosition"
+import { css } from "@emotion/react"
 import styled from "@emotion/styled"
+import Popup from "../components/Popup"
 
 interface Props {}
 
@@ -17,11 +19,43 @@ function Index(_props: Props): ReactElement {
     margin-top: -100%;
   `
 
+  const [popups, setPopups] = useState([
+    {
+      title: "2020 Calendar Year",
+      body: "How would you rate your experience?",
+      x: 150,
+      y: 230,
+    },
+    {
+      title: "2020 Calendar Year",
+      body: "How would you rate your experience?",
+      x: 150,
+      y: 230,
+    },
+  ])
+
   return (
     <div className="container overflow-hidden full-bleed ">
       <img className="w-full v-screen" src={HowWouldYouRateYourExperience} />
+      {popups.map((popup) => {
+        return <Popup {...popup} />
+      })}
+
       <motion.div layout animate={{ y: 0.5 * -scrollPosition }}>
-        <img src={Starfield} className="w-screen h-screen" />
+        <div
+          className={
+            "h-screen " +
+            css`
+              background-image: linear-gradient(
+                  to left,
+                  rgba(0, 0, 0, 0) 0%,
+                  rgba(0, 0, 0, 0) 22%,
+                  rgba(0, 0, 0, 0.65) 100%
+                ),
+                url(${Starfield});
+            `
+          }
+        ></div>
       </motion.div>
     </div>
   )
