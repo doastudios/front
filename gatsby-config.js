@@ -4,6 +4,10 @@ module.exports = {
     description: `An example config of Gatsby + TypeScript + Tailwind CSS`,
     author: `@gatsbyjs`,
   },
+  proxy: {
+    prefix: "/api",
+    url: "https://doa-admin.herokuapp.com/",
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-layout`,
@@ -12,6 +16,17 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        // This type will contain remote schema Query type
+        typeName: "DOA",
+        // This is the field under which it's accessible
+        fieldName: "doa",
+        // URL to query from
+        url: "https://doa-admin.herokuapp.com/",
       },
     },
     {

@@ -34,11 +34,10 @@ const Navigation = ({ scrolled }: { siteTitle: string; scrolled: boolean }) => {
     }
   )
 
-  const containerClasses = scrolled
-    ? "grid grid-cols-3 md:flex md:flex-row fixed w-full z-50 left-0 top-0 "
-    : "md:flex md:flex-col shadow-lg sticky top-0"
+  const containerClasses =
+    "grid grid-cols-3 md:flex md:flex-row fixed w-full z-50 left-0 top-0 "
 
-  const imageClasses = scrolled ? "px-4 my-auto" : "my-6"
+  const imageClasses = "px-4 my-auto"
   const MenuItem = styled.li`
     margin-top: auto;
     margin-bottom: auto;
@@ -56,21 +55,32 @@ const Navigation = ({ scrolled }: { siteTitle: string; scrolled: boolean }) => {
           " p-2 m-0 col-span-12 justify-items-center baseline lg:px-32 cursor-pointer"
         }
       >
-        <button onClick={() => setShowMenu(!showMenu)} className="flex">
-          <GiHamburgerMenu
-            className={"md:hidden w-12 h-12 cursor-pointer my-auto"}
-          />
-        </button>
         <motion.div
-          layout
-          transition={{ duration: 0.05, type: "spring", stiffness: 200 }}
-          animate={{ cx: [null, 200, 225, 250, 275, 200] }}
-          layoutId="carton"
+          animate={{
+            scale: [0.2, 0.3, 1.2, 0.9, 0.95],
+            rotate: [0, 0, -45, 45, 0],
+            borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+          }}
+          transition={{
+            duration: 1,
+            ease: "easeInOut",
+            times: [0, 0.2, 0.5, 0.8, 1],
+            repeatDelay: 1,
+          }}
+          className="col-start-2"
         >
           <div className={"flex " + imageClasses}>
             <img src={DoaCarton} className="w-32 mx-auto my-auto" />
           </div>
         </motion.div>
+        <button
+          onClick={() => setShowMenu(!showMenu)}
+          className="flex col-start-3"
+        >
+          <GiHamburgerMenu
+            className={"md:hidden w-12 h-12 cursor-pointer my-auto"}
+          />
+        </button>
         {/* Push menu into middle column on mobile*/}
         <div className={`md:hidden`} />
         <div className={`md:hidden`} />
@@ -83,7 +93,7 @@ const Navigation = ({ scrolled }: { siteTitle: string; scrolled: boolean }) => {
         >
           <ul
             className={
-              "justify-between h-full pb-4 uppercase text-md grid grid-flow-row md:grid-flow-col bold md:space-x-2 mx-auto md:w-3/4"
+              "text-4xl ml-16 mt-2 md:text-lg justify-between h-full pb-4 uppercase text-md grid grid-flow-row md:grid-flow-col bold md:space-x-2 mx-auto md:w-3/4"
             }
           >
             <MenuItem>
