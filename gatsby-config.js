@@ -26,7 +26,7 @@ module.exports = {
         // This is the field under which it's accessible
         fieldName: "doa",
         // URL to query from
-        url: "https://doastudios.co/api",
+        url: "https://doa-admin.herokuapp.com/graphql",
       },
     },
     {
