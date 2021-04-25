@@ -10,9 +10,7 @@ interface Props {}
 
 const HighlyBelowAvg = require("../images/home/HighlyBelowAvg.png")
 const Starfield = require("../images/home/stars.png")
-const SneakAPeak = require("../images/home/SneakAPeak.png")
 const MomsGarage = require("../images/home/MomsGarage.png")
-const SometimesIWish = require("../images/home/SometimesIWish.png")
 const DontMindIfIDont = require("../images/home/DontMindIfIDont.png")
 const FuturePhonk = require("../images/home/FuturePhonk.png")
 const TropicalHotel = require("../images/home/TropicalHotel.jpg")
@@ -48,17 +46,10 @@ function Index(_props: Props): ReactElement {
       <div className="grid grid-flow-row">
         <img
           className="w-full v-screen full-bleed"
-          src={HighlyBelowAvg}
+          src={HowWouldYouRateYourExperience}
         />
-        {/* TODO <img
-          className="w-full v-screen full-bleed"
-          src={SneakAPeak}
-        /> */}
-
-        
-        
         <img className="w-full v-screen full-bleed" src={Starfield} />
-        <div className="-mt-full-screen z-10">
+        <div className="-mt-full-screen">
           <div className="grid">
             <img className="h-32 my-3 border border-blau" src={MomsGarage} />
             <img
@@ -96,9 +87,6 @@ function Index(_props: Props): ReactElement {
           </div>
         </div>
       </div>
-
-      
-        <img className="w-full v-screen full-bleed" src={SometimesIWish} />
 
       {popups.map((popup) => {
         return <Popup {...popup} />

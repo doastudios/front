@@ -21,7 +21,7 @@ export const MultiTicker = ({ text, count }) => {
             <Ticker speed={speeds[i]} mode={"chain"} direction={directions[i]}>
               {() => (
                 <div className="text-2xl text-white bg-hurt-ur-eyes ">
-                  <h1 className="px-3"> {text} </h1>
+                  <h1 className="px-1"> {text} </h1>
                 </div>
               )}
             </Ticker>
