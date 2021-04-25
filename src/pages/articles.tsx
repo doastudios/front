@@ -2,13 +2,13 @@ import React from "react"
 import { gql, useQuery } from "@apollo/client"
 import { ReactJSXElement } from "@emotion/react/types/jsx-namespace"
 
-const GET_GREETING = gql`
-  query GetArticles {
-    articles {
-      id
-    }
-  }
-`
+//const GET_GREETING = gql`
+//  query GetArticles {
+//    articles {
+//      id
+//    }
+//  }
+//`
 
 function Articles(): ReactJSXElement {
   const { loading, error, data } = useQuery(GET_GREETING)
