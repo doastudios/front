@@ -11,28 +11,30 @@ import { ReactJSXElement } from "@emotion/react/types/jsx-namespace"
 //`
 
 function Articles(): ReactJSXElement {
-  const { loading, error, data } = useQuery(GET_GREETING)
+  // const { loading, error, data } = useQuery(GET_GREETING)
 
-  if (loading) {
-    return (
-      <div className="mx-auto my-64 text-6xl text-gray-800">
-        Akku ist Vollstaendig aufgeladet
-      </div>
-    )
-  }
+  // if (loading) {
+  // return (
+  // <div className="mx-auto my-64 text-6xl text-gray-800">
+  // Akku ist Vollstaendig aufgeladet
+  // </div>
+  // )
+  // }
 
-  return (
-    <div>
-      {error ? (
-        <div className="mx-auto my-64 text-6xl text-red-500">{error}</div>
-      ) : (
-        <span />
-      )}
-      {data.articles.forEach((each: { title: string }) => {
-        return <div className="text-xl upper">{each.title}</div>
-      })}
-    </div>
-  )
+  //  return (
+  //    <div>
+  //      {error ? (
+  //        <div className="mx-auto my-64 text-6xl text-red-500">{error}</div>
+  //      ) : (
+  //        <span />
+  //      )}
+  //      {data.articles.forEach((each: { title: string }) => {
+  //        return <div className="text-xl upper">{each.title}</div>
+  //      })}
+  //    </div>
+  //  )
+
+  return <div>Yee</div>
 }
 
 export default Articles
