@@ -44,10 +44,7 @@ function Index(_props: Props): ReactElement {
   return (
     <>
       <div className="grid grid-flow-row">
-        <img
-          className="w-full v-screen full-bleed"
-          src={HowWouldYouRateYourExperience}
-        />
+        <img className="w-full v-screen full-bleed" src={HighlyBelowAvg} />
         <img className="w-full v-screen full-bleed" src={Starfield} />
         <div className="-mt-full-screen">
           <div className="grid">
