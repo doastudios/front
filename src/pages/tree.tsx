@@ -137,7 +137,7 @@ export const Tree = ({
 }): ReactJSXElement => {
   return (
     <div className="bg-gray">
-      {renderTree({ parents, level: 0, highlighted: highlighted || [] })}
+      {/*renderTree({ parents, level: 0, highlighted: highlighted || [] })*/}
     </div>
   )
 }

@@ -7,9 +7,9 @@ import { Container } from "../utils/styles"
 const Zines = ({ data: { Magazine } }: any) => {
   return (
     <div className="container overflow-hidden full-bleed ">
-      {Magazine.map((each: any) => (
+      {/*Magazine.map((each: any) => (
         <div> each </div>
-      ))}
+	))*/}
     </div>
   )
 }
