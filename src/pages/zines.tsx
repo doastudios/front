@@ -4,7 +4,8 @@ import React from "react"
 import Magzine from "../components/Magzine"
 import { Container } from "../utils/styles"
 
-const Zines = ({ data: { Magazine } }: any) => {
+const Zines = () => {
+  // const Zines = ({ data: { Magazine } }: any) => {
   return (
     <div className="container overflow-hidden full-bleed ">
       {/*Magazine.map((each: any) => (
