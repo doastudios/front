@@ -39,7 +39,6 @@ const PP = () => {
           Please read this privacy notice carefully as it will help you
           understand what we do with the information that we collect.
         </p>
-        <p>TABLE OF CONTENTS</p>
         <p>
           <strong>Personal information you disclose to us</strong>
         </p>
