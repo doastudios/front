@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../layouts"
 const PP = () => {
   return (
-    <Layout hideNav>
+    <Layout>
       <div className="h-full mt-64 grid grid-flow-row gap-4">
         <h1>PRIVACY NOTICE</h1>
         <p>Last updated March 19, 2021</p>
