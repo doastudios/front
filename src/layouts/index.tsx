@@ -9,10 +9,11 @@ import ContextProvider from "../features/store/provider/ContextProvider"
 import { GlobalStyle } from "../utils/styles"
 import Navigation from "../components/Navigation"
 
-const Layout: React.FC = ({ children }) => {
+const Layout: React.FC<{ hideNav?: boolean }> = ({ children, hideNav }) => {
   const [scrolled, setScrolled] = useState(false)
   const waypointEnter = () => setScrolled(true)
   const waypointLeave = () => setScrolled(false)
+  console.log(hideNav)
 
   const WaypointContainer = styled.div`
     // TODO remove Frame
@@ -41,13 +42,15 @@ const Layout: React.FC = ({ children }) => {
           }
         `}
         render={(data) => (
-          <div class="grid grid-cols-12 h-screen bg-gray-100">
-            <div className="row-auto col-span-12">
-              <Navigation
-                siteTitle={data.site.siteMetadata.title}
-                scrolled={scrolled}
-              />
-            </div>
+          <div className="min-h-screen bg-gray-100 grid grid-cols-12">
+            {!hideNav && (
+              <div className="row-auto col-span-12">
+                <Navigation
+                  siteTitle={data.site.siteMetadata.title}
+                  scrolled={scrolled}
+                />
+              </div>
+            )}
 
             <WaypointContainer>
               <Waypoint onEnter={waypointEnter} onLeave={waypointLeave} />

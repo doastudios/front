@@ -1,6 +1,7 @@
 import React, { ReactElement, useState } from "react"
 import { motion } from "framer-motion"
 import useScrollPosition from "../cross/hooks/useScrollPosition"
+import Layout from "../layouts/"
 import { css, jsx } from "@emotion/react"
 import styled from "@emotion/styled"
 import Popup from "../components/Popup"
@@ -42,7 +43,7 @@ function Index(_props: Props): ReactElement {
   ])
 
   return (
-    <>
+    <Layout>
       <div className="grid grid-flow-row">
         <img className="w-full v-screen full-bleed" src={HighlyBelowAvg} />
         <img className="w-full v-screen full-bleed" src={Starfield} />
@@ -88,7 +89,7 @@ function Index(_props: Props): ReactElement {
       {popups.map((popup) => {
         return <Popup {...popup} />
       })}
-    </>
+    </Layout>
   )
 }
 
