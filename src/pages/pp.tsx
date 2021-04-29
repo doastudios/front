@@ -40,65 +40,6 @@ const PP = () => {
           understand what we do with the information that we collect.
         </p>
         <p>TABLE OF CONTENTS</p>
-        <ol>
-          <li>
-            <p>
-              <a href="whatInformation">WHAT INFORMATION DO WE COLLECT?</a>
-            </p>
-          </li>
-          <li>
-            <p href="howIsInfoUsed">HOW DO WE USE YOUR INFORMATION?</p>
-          </li>
-          <li>
-            <a href="howIsInfoShared">
-              WILL YOUR INFORMATION BE SHARED WITH ANYONE?
-            </a>
-          </li>
-          <li>
-            <p>WHO WILL YOUR INFORMATION BE SHARED WITH?</p>
-          </li>
-          <li>
-            <p>DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?</p>
-          </li>
-          <li>
-            <p>DO WE USE GOOGLE MAPS PLATFORM APIS?</p>
-          </li>
-          <li>
-            <p>HOW DO WE HANDLE YOUR SOCIAL LOGINS?</p>
-          </li>
-          <li>
-            <p>HOW LONG DO WE KEEP YOUR INFORMATION?</p>
-          </li>
-          <li>
-            <p>HOW DO WE KEEP YOUR INFORMATION SAFE?</p>
-          </li>
-          <li>
-            <p>DO WE COLLECT INFORMATION FROM MINORS?</p>
-          </li>
-          <li>
-            <p>WHAT ARE YOUR PRIVACY RIGHTS?</p>
-          </li>
-          <li>
-            <p>CONTROLS FOR DO-NOT-TRACK FEATURES</p>
-          </li>
-          <li>
-            <p>DO CALIFORNIA RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?</p>
-          </li>
-          <li>
-            <p>DO WE MAKE UPDATES TO THIS NOTICE?</p>
-          </li>
-          <li>
-            <p>HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</p>
-          </li>
-          <li>
-            <p>
-              HOW CAN YOU REVIEW, UPDATE OR DELETE THE DATA WE COLLECT FROM YOU?
-            </p>
-          </li>
-          <li>
-            <p>WHAT INFORMATION DO WE COLLECT?</p>
-          </li>
-        </ol>
         <p>
           <strong>Personal information you disclose to us</strong>
         </p>

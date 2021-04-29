@@ -46,18 +46,18 @@ function Index(_props: Props): ReactElement {
             </div>
           </div>
           <div className="h-8 text-2xl text-white">
-            <Ticker speed={2} mode={"chain"} direction={"toLeft"}>
+            <Ticker speed={2} mode={"chain"} direction={"toRight"}>
               {() => <h1 className="px-1"> DOA MAGAZINE </h1>}
             </Ticker>
           </div>
-          <div className="flex flex-col px-4 py-8 pt-16 font-extrabold text-white bg-black lg:grid lg:grid-cols-2 full-bleed md:px-28 ">
+          <div className="flex flex-col px-4 py-8 pt-16 mt-auto font-extrabold text-white bg-black lg:grid lg:grid-cols-2 full-bleed md:px-28 ">
             <div className="flex flex-col text-center">
               <p>
                 Be the first to receive can’t-miss offers and discounts, updates
                 on our magazine launch, plus get access to the most exclusive
                 DOA content by signing up for our newsletter.
               </p>
-              <form name="newsletter" netlify>
+              <form name="newsletter" netlify data-netlify="true" method="POST">
                 <div className="flex flex-row w-full px-8 mt-6">
                   <button
                     type="submit"
