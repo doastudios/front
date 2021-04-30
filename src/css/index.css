@@ -22,3 +22,8 @@ body {
 .react-pdf__Page__canvas {
 margin: auto auto;
 }
+
+
+canvas { 
+	margin: auto auto;
+}
