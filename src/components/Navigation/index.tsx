@@ -70,11 +70,11 @@ const Navigation = ({ scrolled }: { siteTitle: string; scrolled: boolean }) => {
             className="col-start-1"
           >
             <div className={"flex " + imageClasses}>
-              <img src={DoaCarton} className="w-32 mx-auto my-auto" />
+              <img src={DoaCarton} className="w-16 mx-auto my-auto" />
             </div>
           </motion.div>
 
-          <h1 className="my-auto text-2xl font-extrabold tracking-wider uppercase">
+          <h1 className="my-auto text-3xl font-extrabold tracking-widest uppercase">
             Dead on Arrival
           </h1>
         </div>

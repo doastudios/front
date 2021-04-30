@@ -17,10 +17,10 @@ export const MultiTicker = ({ text, count }) => {
       {Array.from({ length: count }, (_, k) => {
         i++
         return (
-          <div key={k}>
+          <div key={k} className="h-7">
             <Ticker speed={speeds[i]} mode={"chain"} direction={directions[i]}>
               {() => (
-                <div className="text-2xl text-white bg-hurt-ur-eyes ">
+                <div className="text-2xl text-white bg-hurt-ur-eyes h-full text-bolder ">
                   <h1 className="px-1"> {text} </h1>
                 </div>
               )}

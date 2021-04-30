@@ -30,6 +30,9 @@ module.exports = {
           xl: theme("spacing.8"),
         },
       }),
+      fontFamily: {
+        baskerville: ["Libre Baskerville"],
+      },
       margin: {
         "-full-screen": "-100vh",
         "-100": "-100%",

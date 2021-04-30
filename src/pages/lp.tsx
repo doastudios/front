@@ -66,7 +66,7 @@ function Index(_props: Props): ReactElement {
                     EMAIL
                   </button>
                   <input
-                    className="w-full pl-6 -ml-4 text-black rounded-md"
+                    className="w-full pl-6 -ml-4 text-black rounded-r-md"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
