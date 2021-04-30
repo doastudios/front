@@ -56,7 +56,7 @@ const PP = () => {
           Next
         </button>
       </div>
-      <div className="mx-auto">
+      <div className="mx-auto" style={{ width: "38rem" }}>
         <Document
           file={PrivacyPolicyPDF}
           className="mx-auto"

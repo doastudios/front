@@ -80,7 +80,7 @@ const Navigation = ({ scrolled }: { siteTitle: string; scrolled: boolean }) => {
         </div>
 
         <button
-          onClick={() => setShowMenu(!showMenu)}
+          // onClick={() => setShowMenu(!showMenu)}
           className="flex ml-auto col-start-3 md:mr-4"
         >
           <GiHamburgerMenu className={" w-12 h-12 cursor-pointer my-auto"} />
