@@ -18,3 +18,7 @@
 body {
 	cursor: url('/PointerFinger.svg') 24 24, auto;
 }
+
+.react-pdf__Page__canvas {
+margin: auto auto;
+}
