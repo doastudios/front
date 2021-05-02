@@ -1,8 +1,7 @@
-import React, { useState } from "react"
-import Ticker from "react-ticker"
+import React, { useState } from "react";
+import Ticker from "react-ticker";
 
 export const MultiTicker = ({ text, count }) => {
-  console.log(new Array(count))
   const [{ directions, speeds }, setState] = useState({
     directions: Array(count)
       .fill()
@@ -10,12 +9,12 @@ export const MultiTicker = ({ text, count }) => {
     speeds: Array(count)
       .fill()
       .map(() => Math.random() * 100),
-  })
-  let i = 0
+  });
+  let i = 0;
   return (
     <div className="bg-hurt-ur-eyes full-bleed">
       {Array.from({ length: count }, (_, k) => {
-        i++
+        i++;
         return (
           <div key={k} className="h-7">
             <Ticker speed={speeds[i]} mode={"chain"} direction={directions[i]}>
@@ -26,8 +25,8 @@ export const MultiTicker = ({ text, count }) => {
               )}
             </Ticker>
           </div>
-        )
+        );
       })}
     </div>
-  )
-}
+  );
+};

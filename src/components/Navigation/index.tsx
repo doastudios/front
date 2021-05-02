@@ -1,30 +1,31 @@
-import React, { useContext, useState } from "react"
-import styled, { CSSObject } from "@emotion/styled"
-import reduce from "lodash/reduce"
-import { AnimateSharedLayout } from "framer-motion"
-import { GiHamburgerMenu } from "react-icons/gi"
-import PropTypes from "prop-types"
-import DoaCarton from "../../images/doa_carton.png"
+import React, { useContext, useState } from "react";
+import styled, { CSSObject } from "@emotion/styled";
+import reduce from "lodash/reduce";
+import { AnimateSharedLayout } from "framer-motion";
+import { GiHamburgerMenu } from "react-icons/gi";
+import PropTypes from "prop-types";
+import Img, { FixedObject, FluidObject, GatsbyImageProps } from "gatsby-image";
+import { useStaticQuery, graphql } from "gatsby";
 
-import { motion, motionValue, useTransform } from "framer-motion"
+import { motion, motionValue, useTransform } from "framer-motion";
 
-import StoreContext from "../../features/store/context/StoreContext"
-import { CartCounter, Container, MenuLink, Wrapper } from "./styles"
-import useScrollPosition from "../../cross/hooks/useScrollPosition"
+import StoreContext from "../../features/store/context/StoreContext";
+import { CartCounter, Container, MenuLink, Wrapper } from "./styles";
+import useScrollPosition from "../../cross/hooks/useScrollPosition";
 
 const useQuantity = () => {
   const {
     store: { checkout },
-  } = useContext(StoreContext)
-  const items = checkout ? checkout.lineItems : []
-  const total = reduce(items, (acc, item) => acc + item.quantity, 0)
-  return [total !== 0, total]
-}
+  }: any = useContext(StoreContext);
+  const items = checkout ? checkout.lineItems : [];
+  const total = reduce(items, (acc, item) => acc + item.quantity, 0);
+  return [total !== 0, total];
+};
 
 // eslint-disable-next-line no-empty-pattern
 const Navigation = ({ scrolled }: { siteTitle: string; scrolled: boolean }) => {
-  const [hasItems, quantity] = useQuantity()
-  const scrollPosition = useScrollPosition()
+  const [hasItems, quantity] = useQuantity();
+  const scrollPosition = useScrollPosition();
   const height = useTransform(
     motionValue(scrollPosition),
     [0, -52, -52],
@@ -32,19 +33,39 @@ const Navigation = ({ scrolled }: { siteTitle: string; scrolled: boolean }) => {
     {
       clamp: false,
     }
-  )
+  );
 
-  const containerClasses = "grid grid-cols-3  fixed w-full z-50 left-0 top-0 "
+  const containerClasses = "grid grid-cols-3  fixed w-full z-50 left-0 top-0 ";
 
-  const imageClasses = "px-4 my-auto"
+  interface Data {
+    logo: {
+      childImageSharp: {
+        fluid: FluidObject;
+      };
+    };
+  }
+
+  const data: Data = useStaticQuery(graphql`
+    query {
+      logo: file(relativePath: { eq: "doa_carton.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 793, maxHeight: 900, quality: 100, webpQuality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `);
+
+  const imageClasses = "px-4 my-auto";
   const MenuItem = styled.li`
     margin-top: auto;
     margin-bottom: auto;
-  `
+  `;
 
-  const [showMenu, setShowMenu] = useState(false)
+  const [showMenu, setShowMenu] = useState(false);
 
-  const menuClasses = showMenu ? "" : "hidden"
+  const menuClasses = showMenu ? "" : "hidden";
 
   return (
     <AnimateSharedLayout>
@@ -70,7 +91,10 @@ const Navigation = ({ scrolled }: { siteTitle: string; scrolled: boolean }) => {
             className="col-start-1"
           >
             <div className={"flex " + imageClasses}>
-              <img src={DoaCarton} className="w-16 mx-auto my-auto" />
+              <Img
+                fluid={data.logo.childImageSharp.fluid}
+                className="w-16 mx-auto my-auto"
+              />
             </div>
           </motion.div>
 
@@ -80,7 +104,9 @@ const Navigation = ({ scrolled }: { siteTitle: string; scrolled: boolean }) => {
         </div>
 
         <button
-          // onClick={() => setShowMenu(!showMenu)}
+          onClick={() => {
+            /*setShowMenu(!showMenu)*/
+          }}
           className="flex ml-auto col-start-3 md:mr-4"
         >
           <GiHamburgerMenu className={" w-12 h-12 cursor-pointer my-auto"} />
@@ -130,15 +156,15 @@ const Navigation = ({ scrolled }: { siteTitle: string; scrolled: boolean }) => {
         </motion.div>
       </Wrapper>
     </AnimateSharedLayout>
-  )
-}
+  );
+};
 
 Navigation.propTypes = {
   siteTitle: PropTypes.string,
-}
+};
 
 Navigation.defaultProps = {
   siteTitle: ``,
-}
+};
 
-export default Navigation
+export default Navigation;
