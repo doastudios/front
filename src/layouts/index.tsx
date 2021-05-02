@@ -1,19 +1,20 @@
-import React, { useState } from "react"
-import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
-import { Waypoint } from "react-waypoint"
-import styled from "@emotion/styled"
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { StaticQuery, graphql } from "gatsby";
+import { Waypoint } from "react-waypoint";
+import { ToastProvider } from "react-toast-notifications";
+import styled from "@emotion/styled";
 
-import ContextProvider from "../features/store/provider/ContextProvider"
+import ContextProvider from "../features/store/provider/ContextProvider";
 
-import { GlobalStyle } from "../utils/styles"
-import Navigation from "../components/Navigation"
+import { GlobalStyle } from "../utils/styles";
+import Navigation from "../components/Navigation";
 
 const Layout: React.FC<{ hideNav?: boolean }> = ({ children, hideNav }) => {
-  const [scrolled, setScrolled] = useState(false)
-  const waypointEnter = () => setScrolled(true)
-  const waypointLeave = () => setScrolled(false)
-  console.log(hideNav)
+  const [scrolled, setScrolled] = useState(false);
+  const waypointEnter = () => setScrolled(true);
+  const waypointLeave = () => setScrolled(false);
+  console.log(hideNav);
 
   const WaypointContainer = styled.div`
     // TODO remove Frame
@@ -26,47 +27,49 @@ const Layout: React.FC<{ hideNav?: boolean }> = ({ children, hideNav }) => {
     z-index: -100;
     left: 100vw;
     top: 100vh;
-  `
+  `;
 
   return (
     <ContextProvider>
-      <GlobalStyle />
-      <StaticQuery
-        query={graphql`
-          query SiteTitleQuery {
-            site {
-              siteMetadata {
-                title
+      <ToastProvider>
+        <GlobalStyle />
+        <StaticQuery
+          query={graphql`
+            query SiteTitleQuery {
+              site {
+                siteMetadata {
+                  title
+                }
               }
             }
-          }
-        `}
-        render={(data) => (
-          <div className="min-h-screen bg-gray-100 grid grid-cols-12">
-            {!hideNav && (
-              <div className="row-auto col-span-12">
-                <Navigation
-                  siteTitle={data.site.siteMetadata.title}
-                  scrolled={scrolled}
-                />
-              </div>
-            )}
+          `}
+          render={(data) => (
+            <div className="min-h-screen bg-gray-100 grid grid-cols-12">
+              {!hideNav && (
+                <div className="row-auto col-span-12">
+                  <Navigation
+                    siteTitle={data.site.siteMetadata.title}
+                    scrolled={scrolled}
+                  />
+                </div>
+              )}
 
-            <WaypointContainer>
-              <Waypoint onEnter={waypointEnter} onLeave={waypointLeave} />
-            </WaypointContainer>
-            <div className="col-span-2"></div>
-            <div className="col-span-8">{children}</div>
-            <div className="col-span-2"></div>
-          </div>
-        )}
-      />
+              <WaypointContainer>
+                <Waypoint onEnter={waypointEnter} onLeave={waypointLeave} />
+              </WaypointContainer>
+              <div className="col-span-2"></div>
+              <div className="col-span-8">{children}</div>
+              <div className="col-span-2"></div>
+            </div>
+          )}
+        />
+      </ToastProvider>
     </ContextProvider>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;
