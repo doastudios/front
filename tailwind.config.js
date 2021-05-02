@@ -1,4 +1,4 @@
-const colors = require("tailwindcss/colors")
+const colors = require("tailwindcss/colors");
 
 module.exports = {
   purge: ["public/**/*.html", "src/**/*.tsx"],
@@ -46,10 +46,13 @@ module.exports = {
         "-20": "-20%",
         "-10": "-10%",
       },
+      screens: {
+        xl: "2500",
+      },
     },
   },
   variants: {
     extend: {},
   },
   plugins: [],
-}
+};

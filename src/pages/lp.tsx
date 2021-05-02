@@ -96,7 +96,7 @@ function Index(_props: Props): ReactElement {
               </div>
               <div className="py-8 row-span-3">
                 <h1 className="pr-16 text-5xl italic font-semibold tracking-widest text-right uppercase"></h1>
-                <div className="w-64 mx-auto">
+                <div className="w-1/6 xl:w-1/3 mx-auto">
                   <img className="mx-auto" src={DoaComputer} />
                 </div>
               </div>
