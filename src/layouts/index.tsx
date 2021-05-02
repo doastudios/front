@@ -54,9 +54,6 @@ const Layout: React.FC<{ hideNav?: boolean }> = ({ children, hideNav }) => {
                 </div>
               )}
 
-              <WaypointContainer>
-                <Waypoint onEnter={waypointEnter} onLeave={waypointLeave} />
-              </WaypointContainer>
               <div className="col-span-2"></div>
               <div className="col-span-8">{children}</div>
               <div className="col-span-2"></div>

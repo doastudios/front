@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Ticker from "react-ticker";
 
-export const MultiTicker = ({ text, count }) => {
+export const MyTicker = ({ text, count }) => {
   const [{ directions, speeds }, setState] = useState({
     directions: Array(count)
       .fill()

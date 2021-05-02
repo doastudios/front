@@ -13,9 +13,14 @@
   position: relative;
   right: 50%;
   width: 100vw;
+  overflow-x: hidden;
 }
 
 body {
   cursor: url("/PointerFinger.svg") 24 24, auto;
   image-rendering: -webkit-optimize-contrast;
+}
+
+.ticker {
+  overflow: visible !important;
 }
