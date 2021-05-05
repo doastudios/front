@@ -39,7 +39,8 @@ const MyTicker = ({
             <h1 className="text-white text-xl md:text-3xl whitespace-nowrap font-bold bg-cyan">
               <span className="no-select opacity-0">DOA</span>
               DOA MAGAZINE <span className="no-select opacity-0">DOA</span> DOA
-              MAGAZINE
+              MAGAZINE <span className="no-select opacity-0">DOA</span> DOA
+              MAGAZINE{" "}
               <span className="text-loud-yellow">
                 <span className="no-select opacity-0">DOA</span> TED CRUZ IS THE
                 ZODIAC KILLER
@@ -139,8 +140,8 @@ function Index(_props: Props): ReactElement {
           />
         </div>
         <div className=" px-8 md:pr-12 py-8 pt-16 font-extrabold text-white bg-black ">
-          <div className="grid grid-flow-row lg:grid-flow-col w-full h-full">
-            <div className="flex flex-col my-auto text-xl text-bold text-center">
+          <div className="grid grid-flow-row lg:grid-flow-col w-full h-full justify-items-end">
+            <div className="flex flex-col my-auto text-xl text-bold text-center md:w-1/2 md:mr-2">
               <p>
                 Be the first to receive can’t-miss offers and discounts, updates
                 on our magazine launch, plus get access to the most exclusive
@@ -172,8 +173,8 @@ function Index(_props: Props): ReactElement {
                 src={DoaCartonBordered}
                 className="w-32 md:w-64 my-auto invert"
               />
-              <h1 className="uppercase py-4 md:my-auto text-4xl text-center xl:text-6xl">
-                Dead on Arrival
+              <h1 className="uppercase py-4 md:my-auto text-2xl sm:text-4xl text-center xl:text-6xl">
+                Dead <br /> on <br /> Arrival
               </h1>
             </div>
           </div>
