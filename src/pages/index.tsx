@@ -6,7 +6,7 @@ import Layout from "../layouts/";
 import { css, jsx } from "@emotion/react";
 import styled from "@emotion/styled";
 import Popup from "../components/Popup";
-import { MultiTicker } from "../components/Ticker";
+import { MyTicker } from "../components/Ticker";
 
 interface Props {}
 
@@ -145,7 +145,7 @@ function Index(_props: Props): ReactElement {
         </div>
         <img className="w-full h-screen full-bleed" src={TropicalHotel} />
         <div className="text-boldest">
-          <MultiTicker count={5} text="IRL MEETS URL" />
+          <MyTicker count={5} text="IRL MEETS URL" />
         </div>
         <div className="w-full -mt-50 grid grid-cols-2">
           <img className="z-10 col-start-2" src={MadStylinDeadAssEyeContact} />
