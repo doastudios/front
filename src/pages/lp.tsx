@@ -168,7 +168,7 @@ function Index(_props: Props): ReactElement {
                 </FormWithToasts>
               </div>
             </div>
-            <div className="w-full md:mr-auto flex flex-row lg:flex-row md:col-start-1 pb-8">
+            <div className="w-full md:mr-auto flex flex-row lg:flex-row md:col-start-1 pb-8 justify-center">
               <img
                 src={DoaCartonBordered}
                 className="w-32 md:w-48 lg:w-64 my-auto invert"
