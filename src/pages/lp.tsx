@@ -126,7 +126,7 @@ function Index(_props: Props): ReactElement {
         </div>
         <div className=" px-8 pr-12 py-8 pt-16 font-extrabold text-white bg-black ">
           <div className="flex flex-col md:flex-row-reverse w-full h-full">
-            <div className="flex md:my-auto flex-col text-xl text-center md:flex-reverse md:w-1/3 ">
+            <div className="flex md:my-auto flex-col text-xl text-center md:flex-reverse md:w-1/3 md:mr-4">
               <p>
                 Be the first to receive can’t-miss offers and discounts, updates
                 on our magazine launch, plus get access to the most exclusive
