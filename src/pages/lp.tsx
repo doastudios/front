@@ -110,9 +110,7 @@ function Index(_props: Props): ReactElement {
         email,
       }),
     })
-      .then(() =>
-        addToast("Thanks for subscribing!", { appearance: "success" })
-      )
+      .then(() => addToast("bird up", { appearance: "success" }))
       .catch((error) => addToast(error.message, { appearance: "error" }));
   };
 
