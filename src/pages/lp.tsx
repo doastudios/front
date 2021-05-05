@@ -33,10 +33,11 @@ const MyTicker = ({
           <Ticker
             direction={direction}
             speed={10}
+            move={true}
             offset={direction === "toRight" ? "100%" : undefined}
           >
             {(index) => (
-              <h1 className="ml-6 text-white text-lg md:text-3xl whitespace-nowrap text-bold">
+              <h1 className="ml-6 text-white md:text-3xl whitespace-nowrap text-bold">
                 DOA MAGAZINE{" "}
                 <span className="ml-6 text-loud-yellow">
                   TED CRUZ IS THE ZODIAC KILLER{" "}
@@ -124,7 +125,7 @@ function Index(_props: Props): ReactElement {
         </div>
         <div className=" px-8 pr-12 py-8 pt-16 font-extrabold text-white bg-black ">
           <div className="flex flex-col md:flex-row-reverse w-full h-full">
-            <div className="flex md:my-auto flex-col text-xl text-center md:flex-reverse md:w-1/3 md:mr-4">
+            <div className="flex md:my-auto flex-col text-xl text-center md:flex-reverse md:w-1/3 md:mr-4 xl:text-2xl">
               <p>
                 Be the first to receive can’t-miss offers and discounts, updates
                 on our magazine launch, plus get access to the most exclusive
@@ -156,7 +157,7 @@ function Index(_props: Props): ReactElement {
                 src={DoaCartonBordered}
                 className="w-32 md:w-64 my-auto invert"
               />
-              <h1 className="uppercase py-4 md:my-auto text-4xl text-center">
+              <h1 className="uppercase py-4 md:my-auto text-4xl text-center xl:text-6xl">
                 Dead on Arrival
               </h1>
             </div>

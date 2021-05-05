@@ -29,6 +29,9 @@ module.exports = {
           lg: theme("spacing.6"),
           xl: theme("spacing.8"),
         },
+        screen: {
+          xl: "2500",
+        },
       }),
       fontFamily: {
         baskerville: ["Libre Baskerville"],
@@ -45,9 +48,6 @@ module.exports = {
         "-30": "-30%",
         "-20": "-20%",
         "-10": "-10%",
-      },
-      screens: {
-        xl: "2500",
       },
     },
   },
