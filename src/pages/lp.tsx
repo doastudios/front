@@ -1,4 +1,6 @@
+/** @jsx jsx */
 import React, { FormEventHandler, ReactElement, useState } from "react";
+
 import { motion } from "framer-motion";
 import PageVisibility from "react-page-visibility";
 import useScrollPosition from "../cross/hooks/useScrollPosition";
@@ -32,12 +34,12 @@ const MyTicker = ({
         {pageIsVisible && (
           <Ticker
             direction={direction}
-            speed={10}
+            speed={3}
             move={true}
             offset={direction === "toRight" ? "100%" : undefined}
           >
             {(index) => (
-              <h1 className="text-white md:text-3xl whitespace-nowrap font-bold">
+              <h1 className="text-white text-xl md:text-3xl whitespace-nowrap font-bold">
                 <span className="no-select opacity-0">DOA</span>
                 DOA MAGAZINE
                 <span className="text-loud-yellow">
@@ -120,10 +122,24 @@ function Index(_props: Props): ReactElement {
   return (
     <Layout hideNav>
       <div className=" bg-cyan full-bleed grid h-screen">
-        <div className="md:row-span-5 flex flex-col overflow-hidden">
-          <MyTicker direction="toLeft" className="my-auto  md:mt-4" />
-          <img className="mx-auto my-auto  w-1/5 py-4" src={DoaComputer} />
-          <MyTicker direction="toRight" className="my-auto md:mb-4" />
+        <div
+          css={css`
+            height: 60vh;
+          `}
+          className={"row-span-5 flex flex-col overflow-hidden"}
+        >
+          <MyTicker
+            direction="toLeft"
+            className="mb-auto md:my-auto  md:mt-4"
+          />
+          <img
+            className="mx-auto my-auto  w-2/3 md:w-1/5 py-4"
+            src={DoaComputer}
+          />
+          <MyTicker
+            direction="toRight"
+            className="mt-auto md:my-auto md:mb-4"
+          />
         </div>
         <div className=" px-8 pr-12 py-8 pt-16 font-extrabold text-white bg-black ">
           <div className="flex flex-col md:flex-row-reverse w-full h-full">
