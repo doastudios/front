@@ -19,6 +19,7 @@
 body {
   cursor: url("/PointerFinger.svg") 24 24, auto;
   image-rendering: -webkit-optimize-contrast;
+  font-family: Montserrat;
 }
 
 .ticker {
