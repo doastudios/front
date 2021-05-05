@@ -140,8 +140,8 @@ function Index(_props: Props): ReactElement {
           />
         </div>
         <div className=" px-8 md:pr-12 py-8 pt-16 font-extrabold text-white bg-black ">
-          <div className="grid grid-flow-row lg:grid-flow-col w-full h-full justify-items-end">
-            <div className="flex flex-col my-auto text-xl text-bold text-center md:w-1/2 md:mr-2">
+          <div className="grid grid-flow-row md:grid-flow-col w-full h-full justify-items-end">
+            <div className="flex flex-col my-auto px-4 lg:px-0 lg:text-xl text-bold text-center lg:w-1/2 md:mr-2">
               <p>
                 Be the first to receive can’t-miss offers and discounts, updates
                 on our magazine launch, plus get access to the most exclusive
@@ -171,7 +171,7 @@ function Index(_props: Props): ReactElement {
             <div className="w-full md:mr-auto flex flex-row lg:flex-row md:col-start-1 pb-8">
               <img
                 src={DoaCartonBordered}
-                className="w-32 md:w-64 my-auto invert"
+                className="w-32 md:w-48 lg:w-64 my-auto invert"
               />
               <h1 className="uppercase py-4 md:my-auto text-2xl sm:text-4xl text-center xl:text-6xl">
                 Dead <br /> on <br /> Arrival
