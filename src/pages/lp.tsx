@@ -2,8 +2,8 @@
 import React, { FormEventHandler, ReactElement, useState } from "react";
 
 import { motion } from "framer-motion";
-import PageVisibility from "react-page-visibility";
 import useScrollPosition from "../cross/hooks/useScrollPosition";
+import { usePageVisibility } from "react-page-visibility";
 import Layout from "../layouts/index";
 import { css, jsx } from "@emotion/react";
 import styled from "@emotion/styled";
@@ -23,34 +23,31 @@ const MyTicker = ({
   direction: "toLeft" | "toRight";
   className?: string;
 }) => {
-  const [pageIsVisible, setPageIsVisible] = useState(true);
+  const isVisible = usePageVisibility();
 
-  const handleVisibilityChange = (isVisible: boolean) => {
-    setPageIsVisible(isVisible);
-  };
+  console.log(isVisible);
   return (
     <div className={`h-8 ${className}`}>
-      <PageVisibility>
-        {pageIsVisible && (
-          <Ticker
-            direction={direction}
-            speed={3}
-            move={true}
-            offset={direction === "toRight" ? "100%" : undefined}
-          >
-            {(index) => (
-              <h1 className="text-white text-xl md:text-3xl whitespace-nowrap font-bold">
-                <span className="no-select opacity-0">DOA</span>
-                DOA MAGAZINE
-                <span className="text-loud-yellow">
-                  <span className="no-select opacity-0">DOA</span> TED CRUZ IS
-                  THE ZODIAC KILLER
-                </span>
-              </h1>
-            )}
-          </Ticker>
-        )}
-      </PageVisibility>
+      {isVisible && (
+        <Ticker
+          direction={direction}
+          speed={3}
+          move={true}
+          offset={direction === "toRight" ? "100%" : undefined}
+        >
+          {(index) => (
+            <h1 className="text-white text-xl md:text-3xl whitespace-nowrap font-bold bg-cyan">
+              <span className="no-select opacity-0">DOA</span>
+              DOA MAGAZINE <span className="no-select opacity-0">DOA</span> DOA
+              MAGAZINE
+              <span className="text-loud-yellow">
+                <span className="no-select opacity-0">DOA</span> TED CRUZ IS THE
+                ZODIAC KILLER
+              </span>
+            </h1>
+          )}
+        </Ticker>
+      )}
     </div>
   );
 };
@@ -121,19 +118,19 @@ function Index(_props: Props): ReactElement {
 
   return (
     <Layout hideNav>
-      <div className=" bg-cyan full-bleed grid h-screen">
-        <div
-          css={css`
-            height: 60vh;
-          `}
-          className={"row-span-5 flex flex-col overflow-hidden"}
-        >
+      <div
+        className=" bg-cyan full-bleed grid h-screen"
+        css={css`
+          grid-template-rows: 2fr 3fr;
+        `}
+      >
+        <div className={"flex flex-col"}>
           <MyTicker
             direction="toLeft"
             className="mb-auto md:my-auto  md:mt-4"
           />
           <img
-            className="mx-auto my-auto  w-2/3 md:w-1/5 py-4"
+            className="mx-auto my-auto  w-1/2 md:w-1/5 py-4"
             src={DoaComputer}
           />
           <MyTicker
@@ -141,9 +138,9 @@ function Index(_props: Props): ReactElement {
             className="mt-auto md:my-auto md:mb-4"
           />
         </div>
-        <div className=" px-8 pr-12 py-8 pt-16 font-extrabold text-white bg-black ">
-          <div className="flex flex-col md:flex-row-reverse w-full h-full">
-            <div className="flex md:my-auto flex-col text-xl text-center md:flex-reverse md:w-1/3 md:mr-4 xl:text-xl">
+        <div className=" px-8 md:pr-12 py-8 pt-16 font-extrabold text-white bg-black ">
+          <div className="grid grid-flow-row lg:grid-flow-col w-full h-full">
+            <div className="flex flex-col my-auto text-xl text-bold text-center">
               <p>
                 Be the first to receive can’t-miss offers and discounts, updates
                 on our magazine launch, plus get access to the most exclusive
@@ -152,15 +149,15 @@ function Index(_props: Props): ReactElement {
               <div className="my-8 md:my-0">
                 <FormWithToasts id="newsletter-form" onSubmit={onSubmit}>
                   <>
-                    <div className="flex flex-row w-full px-8 mt-6">
+                    <div className="flex flex-row-reverse md:flex-row w-full px-8 my-12">
                       <button
                         type="submit"
-                        className="z-10 px-8 py-3 font-semibold uppercase bg-cyan rounded-md"
+                        className="z-10 px-4 md:px-8 py-1 md:py-3 md:text-lg font-semibold uppercase bg-cyan rounded-md lg:col-start-2"
                       >
                         EMAIL
                       </button>
                       <input
-                        className="w-full pl-6 -ml-4 text-black rounded-r-md focus:outline-none"
+                        className="w-full pl-6 -mr-4 md:-ml-4 text-black rounded-l-md md:rounded-r-md focus:outline-none"
                         value={email}
                         name="email"
                         onChange={(e) => setEmail(e.target.value)}
@@ -170,7 +167,7 @@ function Index(_props: Props): ReactElement {
                 </FormWithToasts>
               </div>
             </div>
-            <div className="md:w-1/3 md:mr-auto flex flex-row ">
+            <div className="w-full md:mr-auto flex flex-row lg:flex-row md:col-start-1 pb-8">
               <img
                 src={DoaCartonBordered}
                 className="w-32 md:w-64 my-auto invert"
