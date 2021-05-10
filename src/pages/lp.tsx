@@ -150,15 +150,15 @@ function Index(_props: Props): ReactElement {
               <div className="my-8 md:my-0">
                 <FormWithToasts id="newsletter-form" onSubmit={onSubmit}>
                   <>
-                    <div className="flex flex-row-reverse md:flex-row w-full px-8 my-12">
+                    <div className="flex flex-row md:flex-row w-full px-8 my-12">
                       <button
                         type="submit"
-                        className="z-10 px-4 md:px-8 py-1 md:py-3 md:text-lg font-semibold uppercase bg-cyan rounded-md lg:col-start-2"
+                        className="z-10 px-8 py-3 md:text-lg font-semibold uppercase bg-cyan rounded-md"
                       >
                         EMAIL
                       </button>
                       <input
-                        className="w-full pl-6 -mr-4 md:-ml-4 text-black rounded-l-md md:rounded-r-md focus:outline-none"
+                        className="w-full pl-6 -ml-4 text-black rounded-r-md focus:outline-none"
                         value={email}
                         name="email"
                         onChange={(e) => setEmail(e.target.value)}
@@ -173,8 +173,8 @@ function Index(_props: Props): ReactElement {
                 src={DoaCartonBordered}
                 className="w-32 md:w-48 lg:w-64 my-auto invert"
               />
-              <h1 className="uppercase py-4 md:my-auto text-2xl sm:text-4xl text-center xl:text-6xl">
-                Dead <br /> on <br /> Arrival
+              <h1 className="uppercase py-4 my-auto text-2xl sm:text-4xl text-center xl:text-6xl">
+                Dead on <br /> Arrival
               </h1>
             </div>
           </div>

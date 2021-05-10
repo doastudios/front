@@ -10,7 +10,11 @@ import ContextProvider from "../features/store/provider/ContextProvider";
 import { GlobalStyle } from "../utils/styles";
 import Navigation from "../components/Navigation";
 
-const Layout: React.FC<{ hideNav?: boolean }> = ({ children, hideNav }) => {
+const Layout: React.FC<{ hideNav?: boolean; hideCart?: boolean }> = ({
+  children,
+  hideNav,
+  hideCart,
+}) => {
   const [scrolled, setScrolled] = useState(false);
   const waypointEnter = () => setScrolled(true);
   const waypointLeave = () => setScrolled(false);
@@ -44,7 +48,7 @@ const Layout: React.FC<{ hideNav?: boolean }> = ({ children, hideNav }) => {
             }
           `}
           render={(data) => (
-            <div className="min-h-screen bg-gray-100 grid grid-cols-12">
+            <div className="min-h-screen bg-gray-100 grid grid-cols-12 min-w-screen">
               {!hideNav && (
                 <div className="row-auto col-span-12">
                   <Navigation

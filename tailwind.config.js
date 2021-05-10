@@ -17,7 +17,7 @@ module.exports = {
         cyan: "#00aeef",
         "hurt-ur-eyes": "#0000ff",
         "black-eye": "#430099",
-        "thicc-eggplant": "#430099",
+        "thicc-eggplant": "#980092",
         magenta: "#ec008c",
         pink: "#f57fc5",
       },
