@@ -119,11 +119,69 @@ function Index(_props: Props): ReactElement {
   return (
     <Layout hideNav>
       <div
-        className="h-screen bg-cyan full-bleed grid"
+        className=" bg-cyan full-bleed grid h-screen"
         css={css`
           grid-template-rows: 2fr 3fr;
         `}
-      ></div>
+      >
+        <div className={"flex flex-col"}>
+          <MyTicker
+            direction="toLeft"
+            className="mb-auto md:my-auto  md:mt-4"
+          />
+          <img
+            className="mx-auto my-auto  w-1/2 md:w-1/5 py-4"
+            src={DoaComputer}
+          />
+          <MyTicker
+            direction="toRight"
+            className="mt-auto md:my-auto md:mb-4"
+          />
+        </div>
+        <div className=" px-8 md:pr-12 py-8 pt-16 font-extrabold text-white bg-black ">
+          <div className="grid grid-flow-row md:grid-flow-col w-full h-full justify-items-end">
+            <div className="flex flex-col my-auto px-4 lg:px-0 lg:text-xl text-bold text-center lg:w-1/2 md:mr-2">
+              <p>
+                Be the first to receive can’t-miss offers and discounts, updates
+                on our magazine launch, plus get access to the most exclusive
+                DOA content by signing up for our newsletter.
+              </p>
+              <div className="my-8 md:my-0">
+                <FormWithToasts id="newsletter-form" onSubmit={onSubmit}>
+                  <>
+                    <div className="flex flex-row md:flex-row w-full px-8 my-12">
+                      <button
+                        type="submit"
+                        className="z-10 px-8 py-3 md:text-lg font-semibold uppercase bg-cyan rounded-md"
+                      >
+                        EMAIL
+                      </button>
+                      <input
+                        className="w-full pl-6 -ml-4 text-black rounded-r-md focus:outline-none"
+                        value={email}
+                        name="email"
+                        onChange={(e) => setEmail(e.target.value)}
+                      />
+                    </div>
+                  </>
+                </FormWithToasts>
+              </div>
+            </div>
+            <div className="w-full md:mr-auto flex flex-row lg:flex-row md:col-start-1 pb-8 justify-center">
+              <img
+                src={DoaCartonBordered}
+                className="w-32 md:w-48 lg:w-64 my-auto invert"
+              />
+              <h1 className="uppercase py-4 my-auto text-2xl sm:text-4xl text-center xl:text-6xl">
+                Dead on <br /> Arrival
+              </h1>
+            </div>
+          </div>
+          <div className="text-sm text-center col-span-2">
+            <a href="/pp">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 }
