@@ -10,6 +10,7 @@ import styled from "@emotion/styled";
 import Popup from "../components/Popup";
 import Ticker from "react-ticker";
 import { ToastProvider, useToasts } from "react-toast-notifications";
+import { validateEmail } from "../util";
 
 interface Props {}
 
@@ -25,7 +26,6 @@ const MyTicker = ({
 }) => {
   const isVisible = usePageVisibility();
 
-  console.log(isVisible);
   return (
     <div className={`h-8 ${className}`}>
       {isVisible && (
@@ -102,7 +102,10 @@ function Index(_props: Props): ReactElement {
   const onSubmit = (e: any, addToast: Function) => {
     e.preventDefault();
     let myForm = document.getElementById("newsletter-form");
-    console.log(myForm);
+
+    const formData = new FormData(myForm as any);
+
+    if (!myForm || !validateEmail((formData as any).get("email"))) return false;
 
     fetch("/", {
       method: "POST",
