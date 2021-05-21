@@ -109,7 +109,7 @@ function Index(_props: Props): ReactElement {
   };
 
   return (
-    <Layout hideNav>
+    <Layout hideNav hideFooter>
       <div
         className=" bg-cyan full-bleed grid h-screen"
         css={css`
