@@ -105,7 +105,7 @@ const Navigation = ({ scrolled }: { siteTitle: string; scrolled: boolean }) => {
 
         <button
           onClick={() => {
-            /*setShowMenu(!showMenu)*/
+            setShowMenu(!showMenu);
           }}
           className="flex ml-auto col-start-3 md:mr-4"
         >
@@ -126,19 +126,19 @@ const Navigation = ({ scrolled }: { siteTitle: string; scrolled: boolean }) => {
               "text-4xl ml-16 mt-2  justify-between h-full pb-4 uppercase text-md grid grid-flow-row  bold  mx-auto "
             }
           >
-            {/* <MenuItem>
+            <MenuItem>
               <a href="/magazine">magazine</a>
-            </MenuItem> */}
-            {/* <MenuItem>
+            </MenuItem>
+            <MenuItem>
               <a href="/articles">articles</a>
-            </MenuItem> */}
-            {/* <MenuItem>
+            </MenuItem>
+            <MenuItem>
               <a href="/blog">blog</a>
-            </MenuItem> */}
-            {/* <MenuItem>
+            </MenuItem>
+            <MenuItem>
               <a href="/shop">shop</a>
-            </MenuItem> */}
-            {/* <MenuItem>
+            </MenuItem>
+            <MenuItem>
               <a href="/about">about</a>
             </MenuItem>
             <MenuItem>
@@ -151,7 +151,7 @@ const Navigation = ({ scrolled }: { siteTitle: string; scrolled: boolean }) => {
               <span className="text-red-400">
                 <a href="/cart">cart</a>
               </span>
-            </MenuItem> */}
+            </MenuItem>
           </ul>
         </motion.div>
       </Wrapper>

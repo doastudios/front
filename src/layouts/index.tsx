@@ -9,16 +9,16 @@ import ContextProvider from "../features/store/provider/ContextProvider";
 
 import { GlobalStyle } from "../utils/styles";
 import Navigation from "../components/Navigation";
+import Footer from "../components/Footer";
 
-const Layout: React.FC<{ hideNav?: boolean; hideCart?: boolean }> = ({
-  children,
-  hideNav,
-  hideCart,
-}) => {
+const Layout: React.FC<{
+  hideNav?: boolean;
+  hideCart?: boolean;
+  hideFooter?: boolean;
+}> = ({ children, hideNav, hideFooter, hideCart }) => {
   const [scrolled, setScrolled] = useState(false);
   const waypointEnter = () => setScrolled(true);
   const waypointLeave = () => setScrolled(false);
-  console.log(hideNav);
 
   const WaypointContainer = styled.div`
     // TODO remove Frame
@@ -48,7 +48,7 @@ const Layout: React.FC<{ hideNav?: boolean; hideCart?: boolean }> = ({
             }
           `}
           render={(data) => (
-            <div className="min-h-screen bg-gray-100 grid grid-cols-12 min-w-screen">
+            <div className="min-h-screen bg-gray-100 grid grid-cols-12 min-w-screen pt-16">
               {!hideNav && (
                 <div className="row-auto col-span-12">
                   <Navigation
@@ -61,6 +61,12 @@ const Layout: React.FC<{ hideNav?: boolean; hideCart?: boolean }> = ({
               <div className="col-span-2"></div>
               <div className="col-span-8">{children}</div>
               <div className="col-span-2"></div>
+
+              {!hideFooter && (
+                <div className="row-auto col-span-12">
+                  <Footer />
+                </div>
+              )}
             </div>
           )}
         />
