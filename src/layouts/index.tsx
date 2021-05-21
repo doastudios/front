@@ -48,7 +48,7 @@ const Layout: React.FC<{
             }
           `}
           render={(data) => (
-            <div className="min-h-screen bg-gray-100 grid grid-cols-12 min-w-screen pt-16">
+            <div className="min-h-screen bg-gray-100 grid grid-cols-12 min-w-screen ">
               {!hideNav && (
                 <div className="row-auto col-span-12">
                   <Navigation

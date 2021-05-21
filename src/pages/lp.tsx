@@ -36,10 +36,23 @@ const MyTicker = ({
           offset={direction === "toRight" ? "100%" : undefined}
         >
           {(index) => (
-            <h1 className="text-xl font-bold text-white md:text-3xl whitespace-nowrap bg-cyan">
+            <h1
+              className="text-xl font-bold text-white md:text-3xl whitespace-nowrap bg-cyan"
+              css={css`
+                width: 150rem;
+              `}
+            >
               <span className="opacity-0 no-select">DOA</span>
-              DOA MAGAZINE <span className="opacity-0 no-select">DOA</span> DOA
-              MAGAZINE{" "}
+              DOA MAGAZINE
+              <span className="opacity-0 no-select">DOA</span>
+              DOA MAGAZINE
+              <span className="opacity-0 no-select">DOA</span>
+              DOA MAGAZINE
+              <span className="opacity-0 no-select">DOA</span>
+              DOA MAGAZINE
+              <span className="opacity-0 no-select">DOA</span>
+              DOA MAGAZINE
+              <span className="opacity-0 no-select">DOA</span>
               <span className="text-loud-yellow">
                 <span className="opacity-0 no-select">DOA</span> TED CRUZ IS THE
                 ZODIAC KILLER
