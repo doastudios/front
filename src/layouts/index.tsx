@@ -48,7 +48,11 @@ const Layout: React.FC<{
             }
           `}
           render={(data) => (
-            <div className="min-h-screen bg-gray-100 grid grid-cols-12 min-w-screen ">
+            <div
+              className={`min-h-screen bg-gray-100 grid grid-cols-12 min-w-screen has-scrollbar
+                  ${hideNav ? "" : "pt-6"} 
+                `}
+            >
               {!hideNav && (
                 <div className="row-auto col-span-12">
                   <Navigation

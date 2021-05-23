@@ -9,6 +9,7 @@ module.exports = {
     url: "https://doa-admin.herokuapp.com/",
   },
   plugins: [
+    `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
