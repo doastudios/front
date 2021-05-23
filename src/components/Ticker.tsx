@@ -19,7 +19,7 @@ export const MyTicker = ({ text, count }) => {
           <div key={k} className="h-7">
             <Ticker speed={speeds[i]} mode={"chain"} direction={directions[i]}>
               {() => (
-                <div className="text-2xl text-white bg-hurt-ur-eyes h-full text-bolder ">
+                <div className="text-2xl text-white bg-hurt-ur-eyes h-full text-bolder select-none ">
                   <h1 className="px-1"> {text} </h1>
                 </div>
               )}

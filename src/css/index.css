@@ -3,25 +3,112 @@
 @tailwind components;
 
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,600;0,700;0,800;1,300;1,400;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@font-face {
+  font-family: "OCRAStd";
+  src: local("OCRAStd"), url("../fonts/OCRAStd.otf") format("truetype");
+}
+
+.font-ocrastd {
+  font-family: OCRAStd;
+}
 
 .full-bleed {
-  left: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
   max-width: 100vw;
   position: relative;
-  right: 50%;
   width: 100vw;
-  overflow-x: hidden;
+  margin: 0 calc(-50vw + 50%);
+}
+:root {
+  --scroll-bar: 8px;
+}
+.has-scrollbar .full-bleed {
+  width: calc(100vw - 20px) !important;
+  margin: 0 calc(-50vw + 50% + 8px) !important;
 }
 
 body {
   cursor: url("/PointerFinger.svg") 24 24, auto;
   image-rendering: -webkit-optimize-contrast;
   font-family: Montserrat;
+  max-width: 100vw;
 }
 
 .ticker {
   overflow: visible !important;
+}
+
+.vertical-ticker {
+  animation: slide 5s linear infinite;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+@keyframes slide {
+  0% {
+    transform: translatey(0%);
+  }
+
+  100% {
+    transform: translatey(100%);
+  }
+}
+
+.marquee {
+  overflow: hidden;
+  position: relative;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 8px 0 4px 0;
+}
+
+/* would need to be adjusted depending on time */
+.marquee .marqueeone {
+  animation: marquee 10s linear infinite;
+}
+
+.marquee .marqueetwo {
+  animation: marquee 10s linear 2.5s infinite;
+}
+
+.marquee .marqueethree {
+  animation: marquee 10s linear 5s infinite;
+}
+
+.marquee .marqueefour {
+  animation: marquee 10s linear 7.5s infinite;
+}
+
+/* even out the elements */
+.marquee div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 100%;
+  display: flex;
+  justify-content: space-between;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.marquee:hover div {
+  animation-play-state: paused;
+}
+
+/* add delay at the end of animation so you dont start while another div is going */
+@keyframes marquee {
+  0% {
+    top: 100%;
+    display: none;
+  }
+  50% {
+    top: -100%;
+  }
+  100% {
+    top: -100%;
+  }
 }

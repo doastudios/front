@@ -9,8 +9,8 @@ import { css, jsx } from "@emotion/react";
 import styled from "@emotion/styled";
 import Popup from "../components/Popup";
 import Ticker from "react-ticker";
-import { ToastProvider, useToasts } from "react-toast-notifications";
 import { validateEmail } from "../util";
+import { FormWithToasts } from "../components/FormWithToasts";
 
 interface Props {}
 
@@ -36,10 +36,23 @@ const MyTicker = ({
           offset={direction === "toRight" ? "100%" : undefined}
         >
           {(index) => (
-            <h1 className="text-xl font-bold text-white md:text-3xl whitespace-nowrap bg-cyan">
+            <h1
+              className="text-xl font-bold text-white md:text-3xl whitespace-nowrap bg-cyan"
+              css={css`
+                width: 150rem;
+              `}
+            >
               <span className="opacity-0 no-select">DOA</span>
-              DOA MAGAZINE <span className="opacity-0 no-select">DOA</span> DOA
-              MAGAZINE{" "}
+              DOA MAGAZINE
+              <span className="opacity-0 no-select">DOA</span>
+              DOA MAGAZINE
+              <span className="opacity-0 no-select">DOA</span>
+              DOA MAGAZINE
+              <span className="opacity-0 no-select">DOA</span>
+              DOA MAGAZINE
+              <span className="opacity-0 no-select">DOA</span>
+              DOA MAGAZINE
+              <span className="opacity-0 no-select">DOA</span>
               <span className="text-loud-yellow">
                 <span className="opacity-0 no-select">DOA</span> TED CRUZ IS THE
                 ZODIAC KILLER
@@ -49,30 +62,6 @@ const MyTicker = ({
         </Ticker>
       )}
     </div>
-  );
-};
-
-const FormWithToasts = ({
-  id,
-  children,
-  onSubmit,
-}: {
-  id: string;
-  children: ReactElement;
-  onSubmit: Function;
-}) => {
-  const { addToast } = useToasts();
-  return (
-    <form
-      id={id}
-      name={"newsletter-form"}
-      onSubmit={(e) => {
-        onSubmit(e, addToast);
-      }}
-      data-netlify={true}
-    >
-      {{ ...children }}
-    </form>
   );
 };
 
@@ -120,7 +109,7 @@ function Index(_props: Props): ReactElement {
   };
 
   return (
-    <Layout hideNav>
+    <Layout hideNav hideFooter>
       <div
         className=" bg-cyan full-bleed grid h-screen"
         css={css`

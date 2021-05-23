@@ -5,6 +5,7 @@ import { AnimateSharedLayout } from "framer-motion";
 import { GiHamburgerMenu } from "react-icons/gi";
 import PropTypes from "prop-types";
 import Img, { FixedObject, FluidObject, GatsbyImageProps } from "gatsby-image";
+import { Logo } from "../svg/logo";
 import { useStaticQuery, graphql } from "gatsby";
 
 import { motion, motionValue, useTransform } from "framer-motion";
@@ -57,7 +58,6 @@ const Navigation = ({ scrolled }: { siteTitle: string; scrolled: boolean }) => {
     }
   `);
 
-  const imageClasses = "px-4 my-auto";
   const MenuItem = styled.li`
     margin-top: auto;
     margin-bottom: auto;
@@ -65,93 +65,76 @@ const Navigation = ({ scrolled }: { siteTitle: string; scrolled: boolean }) => {
 
   const [showMenu, setShowMenu] = useState(false);
 
-  const menuClasses = showMenu ? "" : "hidden";
+  const menuClasses = showMenu ? "" : "hidden lg:block";
 
   return (
     <AnimateSharedLayout>
       <Wrapper
         className={
           containerClasses +
-          " p-2 m-0 col-span-12 justify-items-center baseline  cursor-pointer"
+          " p-2 m-0 col-span-12 justify-items-center baseline cursor-pointer"
         }
       >
-        <div className="flex flex-row">
-          <motion.div
-            animate={{
-              scale: [0.2, 0.3, 1.2, 0.9, 0.95],
-              rotate: [0, 0, -45, 45, 0],
-              borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-            }}
-            transition={{
-              duration: 1,
-              ease: "easeInOut",
-              times: [0, 0.2, 0.5, 0.8, 1],
-              repeatDelay: 1,
-            }}
-            className="col-start-1"
-          >
-            <div className={"flex " + imageClasses}>
-              <Img
-                fluid={data.logo.childImageSharp.fluid}
-                className="w-16 mx-auto my-auto"
-              />
-            </div>
-          </motion.div>
-
-          <h1 className="my-auto text-3xl font-extrabold tracking-widest uppercase">
+        <div className="flex flex-row mr-auto">
+          <div className={"w-24 px-4 my-auto ml-4"}>
+            <Logo />
+          </div>
+          <h1 className="my-auto hidden md:block whitespace-nowrap text-3xl font-extrabold tracking-widest uppercase">
             Dead on Arrival
           </h1>
         </div>
 
         <button
           onClick={() => {
-            /*setShowMenu(!showMenu)*/
+            setShowMenu(!showMenu);
           }}
-          className="flex ml-auto col-start-3 md:mr-4"
+          className="flex ml-auto col-start-3 mr-4 lg:hidden"
         >
           <GiHamburgerMenu className={" w-12 h-12 cursor-pointer my-auto"} />
         </button>
         {/* Push menu into middle column on mobile*/}
-        <div className={``} />
+        <div className={`lg:hidden`} />
         <div className={``} />
         <motion.div
           layout
           animate={{ opacity: 100 }}
           transition={{ duration: 0.05, type: "spring", stiffness: 100 }}
-          className={"w-full pb-4 mt-8 col-span-2 " + menuClasses}
+          className={
+            "w-full pb-4 mt-8 col-span-2 lg:col-span-1 mr-32 " + menuClasses
+          }
           layoutId="menu"
         >
           <ul
             className={
-              "text-4xl ml-16 mt-2  justify-between h-full pb-4 uppercase text-md grid grid-flow-row  bold  mx-auto "
+              "text-4xl lg:text-lg ml-16 lg:ml-0 mt-2  justify-between h-full pb-4 uppercase text-md grid grid-flow-row lg:grid-flow-col bold  mx-auto "
             }
           >
-            {/* <MenuItem>
-              <a href="/magazine">magazine</a>
-            </MenuItem> */}
-            {/* <MenuItem>
-              <a href="/articles">articles</a>
-            </MenuItem> */}
-            {/* <MenuItem>
-              <a href="/blog">blog</a>
-            </MenuItem> */}
-            {/* <MenuItem>
-              <a href="/shop">shop</a>
-            </MenuItem> */}
-            {/* <MenuItem>
-              <a href="/about">about</a>
+            <MenuItem>
+              <a href="/magazine">Magazine</a>
             </MenuItem>
             <MenuItem>
-              <a href="/contact">contact</a>
+              <a href="/articles">Articles</a>
             </MenuItem>
             <MenuItem>
-              <a href="/subscribe">subscribe</a>
+              <a href="/blog">Blog</a>
+            </MenuItem>
+            <MenuItem>
+              <a href="/shop">Shop</a>
+            </MenuItem>
+            <MenuItem>
+              <a href="/about">About</a>
+            </MenuItem>
+            <MenuItem>
+              <a href="/contact">Contact</a>
+            </MenuItem>
+            <MenuItem>
+              <a href="/subscribe">Subscribe</a>
             </MenuItem>
             <MenuItem>
               <span className="text-red-400">
-                <a href="/cart">cart</a>
+                <a href="/cart">Cart</a>
               </span>
-            </MenuItem> */}
+            </MenuItem>
           </ul>
         </motion.div>
       </Wrapper>
